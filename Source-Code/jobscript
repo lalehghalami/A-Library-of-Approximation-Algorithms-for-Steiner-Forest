@@ -1,0 +1,283 @@
+#!/bin/bash
+inPath=/YOUR-LOCAL-DIRECTORY/jea-acm-SF-Materials/SF-Samples/  # replace the directory of Samples
+outPath=/YOUR-LOCAL-DIRECTORY/jea-acm-SF-Materials/SF-Results/ # replace the Results directory
+
+############################################################
+# Reading: SF-Instances-NM
+file1=SF-Instances-NM/instance
+
+./SFout $inPath $outPath $file1 -nm-001 PD
+./SFout $inPath $outPath $file1 -nm-002 PD
+./SFout $inPath $outPath $file1 -nm-003 PD
+./SFout $inPath $outPath $file1 -nm-004 PD
+./SFout $inPath $outPath $file1 -nm-005 PD
+./SFout $inPath $outPath $file1 -nm-006 PD
+./SFout $inPath $outPath $file1 -nm-007 PD
+./SFout $inPath $outPath $file1 -nm-008 PD
+./SFout $inPath $outPath $file1 -nm-009 PD
+./SFout $inPath $outPath $file1 -nm-010 PD
+./SFout $inPath $outPath $file1 -nm-011 PD
+./SFout $inPath $outPath $file1 -nm-012 PD
+./SFout $inPath $outPath $file1 -nm-013 PD
+./SFout $inPath $outPath $file1 -nm-014 PD
+./SFout $inPath $outPath $file1 -nm-015 PD
+./SFout $inPath $outPath $file1 -nm-016 PD
+./SFout $inPath $outPath $file1 -nm-017 PD
+./SFout $inPath $outPath $file1 -nm-018 PD
+./SFout $inPath $outPath $file1 -nm-019 PD
+./SFout $inPath $outPath $file1 -nm-020 PD
+./SFout $inPath $outPath $file1 -nm-021 PD
+./SFout $inPath $outPath $file1 -nm-022 PD
+./SFout $inPath $outPath $file1 -nm-023 PD
+./SFout $inPath $outPath $file1 -nm-024 PD
+
+./SFout $inPath $outPath $file1 -nm-001 PG
+./SFout $inPath $outPath $file1 -nm-002 PG
+./SFout $inPath $outPath $file1 -nm-003 PG
+./SFout $inPath $outPath $file1 -nm-004 PG
+./SFout $inPath $outPath $file1 -nm-005 PG
+./SFout $inPath $outPath $file1 -nm-006 PG
+./SFout $inPath $outPath $file1 -nm-007 PG
+./SFout $inPath $outPath $file1 -nm-008 PG
+./SFout $inPath $outPath $file1 -nm-009 PG
+./SFout $inPath $outPath $file1 -nm-010 PG
+./SFout $inPath $outPath $file1 -nm-011 PG
+./SFout $inPath $outPath $file1 -nm-012 PG
+./SFout $inPath $outPath $file1 -nm-013 PG
+./SFout $inPath $outPath $file1 -nm-014 PG
+./SFout $inPath $outPath $file1 -nm-015 PG
+./SFout $inPath $outPath $file1 -nm-016 PG
+./SFout $inPath $outPath $file1 -nm-017 PG
+./SFout $inPath $outPath $file1 -nm-018 PG
+./SFout $inPath $outPath $file1 -nm-019 PG
+./SFout $inPath $outPath $file1 -nm-020 PG
+./SFout $inPath $outPath $file1 -nm-021 PG
+./SFout $inPath $outPath $file1 -nm-022 PG
+./SFout $inPath $outPath $file1 -nm-023 PG
+./SFout $inPath $outPath $file1 -nm-024 PG
+
+./SFout $inPath $outPath $file1 -nm-001 GL
+./SFout $inPath $outPath $file1 -nm-002 GL
+./SFout $inPath $outPath $file1 -nm-003 GL
+./SFout $inPath $outPath $file1 -nm-004 GL
+./SFout $inPath $outPath $file1 -nm-005 GL
+./SFout $inPath $outPath $file1 -nm-006 GL
+./SFout $inPath $outPath $file1 -nm-007 GL
+./SFout $inPath $outPath $file1 -nm-008 GL
+./SFout $inPath $outPath $file1 -nm-009 GL
+./SFout $inPath $outPath $file1 -nm-010 GL
+./SFout $inPath $outPath $file1 -nm-011 GL
+./SFout $inPath $outPath $file1 -nm-012 GL
+./SFout $inPath $outPath $file1 -nm-013 GL
+./SFout $inPath $outPath $file1 -nm-014 GL
+./SFout $inPath $outPath $file1 -nm-015 GL
+./SFout $inPath $outPath $file1 -nm-016 GL
+./SFout $inPath $outPath $file1 -nm-017 GL
+./SFout $inPath $outPath $file1 -nm-018 GL
+./SFout $inPath $outPath $file1 -nm-019 GL
+./SFout $inPath $outPath $file1 -nm-020 GL
+./SFout $inPath $outPath $file1 -nm-021 GL
+./SFout $inPath $outPath $file1 -nm-022 GL
+./SFout $inPath $outPath $file1 -nm-023 GL
+./SFout $inPath $outPath $file1 -nm-024 GL
+
+./SFout $inPath $outPath $file1 -nm-001 TM
+./SFout $inPath $outPath $file1 -nm-002 TM
+./SFout $inPath $outPath $file1 -nm-003 TM
+./SFout $inPath $outPath $file1 -nm-004 TM
+./SFout $inPath $outPath $file1 -nm-005 TM
+./SFout $inPath $outPath $file1 -nm-006 TM
+./SFout $inPath $outPath $file1 -nm-007 TM
+./SFout $inPath $outPath $file1 -nm-008 TM
+./SFout $inPath $outPath $file1 -nm-009 TM
+./SFout $inPath $outPath $file1 -nm-010 TM
+./SFout $inPath $outPath $file1 -nm-011 TM
+./SFout $inPath $outPath $file1 -nm-012 TM
+./SFout $inPath $outPath $file1 -nm-013 TM
+./SFout $inPath $outPath $file1 -nm-014 TM
+./SFout $inPath $outPath $file1 -nm-015 TM
+./SFout $inPath $outPath $file1 -nm-016 TM
+./SFout $inPath $outPath $file1 -nm-017 TM
+./SFout $inPath $outPath $file1 -nm-018 TM
+./SFout $inPath $outPath $file1 -nm-019 TM
+./SFout $inPath $outPath $file1 -nm-020 TM
+./SFout $inPath $outPath $file1 -nm-021 TM
+./SFout $inPath $outPath $file1 -nm-022 TM
+./SFout $inPath $outPath $file1 -nm-023 TM
+./SFout $inPath $outPath $file1 -nm-024 TM
+
+############################################################
+# Reading: SF-Instances-OPT
+file2=SF-Instances-OPT/instance
+
+./SFout $inPath $outPath $file2 -opt-001 PD
+./SFout $inPath $outPath $file2 -opt-002 PD
+./SFout $inPath $outPath $file2 -opt-003 PD
+./SFout $inPath $outPath $file2 -opt-004 PD
+./SFout $inPath $outPath $file2 -opt-005 PD
+./SFout $inPath $outPath $file2 -opt-006 PD
+./SFout $inPath $outPath $file2 -opt-007 PD
+./SFout $inPath $outPath $file2 -opt-008 PD
+./SFout $inPath $outPath $file2 -opt-009 PD
+./SFout $inPath $outPath $file2 -opt-010 PD
+./SFout $inPath $outPath $file2 -opt-011 PD
+./SFout $inPath $outPath $file2 -opt-012 PD
+./SFout $inPath $outPath $file2 -opt-013 PD
+./SFout $inPath $outPath $file2 -opt-014 PD
+./SFout $inPath $outPath $file2 -opt-015 PD
+./SFout $inPath $outPath $file2 -opt-016 PD
+./SFout $inPath $outPath $file2 -opt-017 PD
+./SFout $inPath $outPath $file2 -opt-018 PD
+./SFout $inPath $outPath $file2 -opt-019 PD
+./SFout $inPath $outPath $file2 -opt-020 PD
+./SFout $inPath $outPath $file2 -opt-021 PD
+./SFout $inPath $outPath $file2 -opt-022 PD
+./SFout $inPath $outPath $file2 -opt-023 PD
+
+./SFout $inPath $outPath $file2 -opt-001 PG
+./SFout $inPath $outPath $file2 -opt-002 PG
+./SFout $inPath $outPath $file2 -opt-003 PG
+./SFout $inPath $outPath $file2 -opt-004 PG
+./SFout $inPath $outPath $file2 -opt-005 PG
+./SFout $inPath $outPath $file2 -opt-006 PG
+./SFout $inPath $outPath $file2 -opt-007 PG
+./SFout $inPath $outPath $file2 -opt-008 PG
+./SFout $inPath $outPath $file2 -opt-009 PG
+./SFout $inPath $outPath $file2 -opt-010 PG
+./SFout $inPath $outPath $file2 -opt-011 PG
+./SFout $inPath $outPath $file2 -opt-012 PG
+./SFout $inPath $outPath $file2 -opt-013 PG
+./SFout $inPath $outPath $file2 -opt-014 PG
+./SFout $inPath $outPath $file2 -opt-015 PG
+./SFout $inPath $outPath $file2 -opt-016 PG
+./SFout $inPath $outPath $file2 -opt-017 PG
+./SFout $inPath $outPath $file2 -opt-018 PG
+./SFout $inPath $outPath $file2 -opt-019 PG
+./SFout $inPath $outPath $file2 -opt-020 PG
+./SFout $inPath $outPath $file2 -opt-021 PG
+./SFout $inPath $outPath $file2 -opt-022 PG
+./SFout $inPath $outPath $file2 -opt-023 PG
+
+./SFout $inPath $outPath $file2 -opt-001 GL
+./SFout $inPath $outPath $file2 -opt-002 GL
+./SFout $inPath $outPath $file2 -opt-003 GL
+./SFout $inPath $outPath $file2 -opt-004 GL
+./SFout $inPath $outPath $file2 -opt-005 GL
+./SFout $inPath $outPath $file2 -opt-006 GL
+./SFout $inPath $outPath $file2 -opt-007 GL
+./SFout $inPath $outPath $file2 -opt-008 GL
+./SFout $inPath $outPath $file2 -opt-009 GL
+./SFout $inPath $outPath $file2 -opt-010 GL
+./SFout $inPath $outPath $file2 -opt-011 GL
+./SFout $inPath $outPath $file2 -opt-012 GL
+./SFout $inPath $outPath $file2 -opt-013 GL
+./SFout $inPath $outPath $file2 -opt-014 GL
+./SFout $inPath $outPath $file2 -opt-015 GL
+./SFout $inPath $outPath $file2 -opt-016 GL
+./SFout $inPath $outPath $file2 -opt-017 GL
+./SFout $inPath $outPath $file2 -opt-018 GL
+./SFout $inPath $outPath $file2 -opt-019 GL
+./SFout $inPath $outPath $file2 -opt-020 GL
+./SFout $inPath $outPath $file2 -opt-021 GL
+./SFout $inPath $outPath $file2 -opt-022 GL
+./SFout $inPath $outPath $file2 -opt-023 GL
+
+./SFout $inPath $outPath $file2 -opt-001 TM
+./SFout $inPath $outPath $file2 -opt-002 TM
+./SFout $inPath $outPath $file2 -opt-003 TM
+./SFout $inPath $outPath $file2 -opt-004 TM
+./SFout $inPath $outPath $file2 -opt-005 TM
+./SFout $inPath $outPath $file2 -opt-006 TM
+./SFout $inPath $outPath $file2 -opt-007 TM
+./SFout $inPath $outPath $file2 -opt-008 TM
+./SFout $inPath $outPath $file2 -opt-009 TM
+./SFout $inPath $outPath $file2 -opt-010 TM
+./SFout $inPath $outPath $file2 -opt-011 TM
+./SFout $inPath $outPath $file2 -opt-012 TM
+./SFout $inPath $outPath $file2 -opt-013 TM
+./SFout $inPath $outPath $file2 -opt-014 TM
+./SFout $inPath $outPath $file2 -opt-015 TM
+./SFout $inPath $outPath $file2 -opt-016 TM
+./SFout $inPath $outPath $file2 -opt-017 TM
+./SFout $inPath $outPath $file2 -opt-018 TM
+./SFout $inPath $outPath $file2 -opt-019 TM
+./SFout $inPath $outPath $file2 -opt-020 TM
+./SFout $inPath $outPath $file2 -opt-021 TM
+./SFout $inPath $outPath $file2 -opt-022 TM
+./SFout $inPath $outPath $file2 -opt-023 TM
+
+############################################################
+# Reading: SF-Instances-different-t
+file3=SF-Instances-different-t/instance
+
+./SFout $inPath $outPath $file3 -t-001-10 PD
+./SFout $inPath $outPath $file3 -t-001-50 PD
+./SFout $inPath $outPath $file3 -t-001-80 PD
+./SFout $inPath $outPath $file3 -t-001-100 PD
+./SFout $inPath $outPath $file3 -t-001-150 PD
+./SFout $inPath $outPath $file3 -t-001-200 PD
+./SFout $inPath $outPath $file3 -t-001-250 PD
+./SFout $inPath $outPath $file3 -t-001-300 PD
+
+./SFout $inPath $outPath $file3 -t-002-26 PD
+./SFout $inPath $outPath $file3 -t-002-50 PD
+./SFout $inPath $outPath $file3 -t-002-80 PD
+./SFout $inPath $outPath $file3 -t-002-100 PD
+./SFout $inPath $outPath $file3 -t-002-150 PD
+./SFout $inPath $outPath $file3 -t-002-200 PD
+./SFout $inPath $outPath $file3 -t-002-250 PD
+./SFout $inPath $outPath $file3 -t-002-300 PD
+
+./SFout $inPath $outPath $file3 -t-001-10 PG
+./SFout $inPath $outPath $file3 -t-001-50 PG
+./SFout $inPath $outPath $file3 -t-001-80 PG
+./SFout $inPath $outPath $file3 -t-001-100 PG
+./SFout $inPath $outPath $file3 -t-001-150 PG
+./SFout $inPath $outPath $file3 -t-001-200 PG
+./SFout $inPath $outPath $file3 -t-001-250 PG
+./SFout $inPath $outPath $file3 -t-001-300 PG
+
+./SFout $inPath $outPath $file3 -t-002-26 PG
+./SFout $inPath $outPath $file3 -t-002-50 PG
+./SFout $inPath $outPath $file3 -t-002-80 PG
+./SFout $inPath $outPath $file3 -t-002-100 PG
+./SFout $inPath $outPath $file3 -t-002-150 PG
+./SFout $inPath $outPath $file3 -t-002-200 PG
+./SFout $inPath $outPath $file3 -t-002-250 PG
+./SFout $inPath $outPath $file3 -t-002-300 PG
+
+./SFout $inPath $outPath $file3 -t-001-10 GL
+./SFout $inPath $outPath $file3 -t-001-50 GL
+./SFout $inPath $outPath $file3 -t-001-80 GL
+./SFout $inPath $outPath $file3 -t-001-100 GL
+./SFout $inPath $outPath $file3 -t-001-150 GL
+./SFout $inPath $outPath $file3 -t-001-200 GL
+./SFout $inPath $outPath $file3 -t-001-250 GL
+./SFout $inPath $outPath $file3 -t-001-300 GL
+
+./SFout $inPath $outPath $file3 -t-002-26 GL
+./SFout $inPath $outPath $file3 -t-002-50 GL
+./SFout $inPath $outPath $file3 -t-002-80 GL
+./SFout $inPath $outPath $file3 -t-002-100 GL
+./SFout $inPath $outPath $file3 -t-002-150 GL
+./SFout $inPath $outPath $file3 -t-002-200 GL
+./SFout $inPath $outPath $file3 -t-002-250 GL
+./SFout $inPath $outPath $file3 -t-002-300 GL
+
+./SFout $inPath $outPath $file3 -t-001-10 TM
+./SFout $inPath $outPath $file3 -t-001-50 TM
+./SFout $inPath $outPath $file3 -t-001-80 TM
+./SFout $inPath $outPath $file3 -t-001-100 TM
+./SFout $inPath $outPath $file3 -t-001-150 TM
+./SFout $inPath $outPath $file3 -t-001-200 TM
+./SFout $inPath $outPath $file3 -t-001-250 TM
+./SFout $inPath $outPath $file3 -t-001-300 TM
+
+./SFout $inPath $outPath $file3 -t-002-26 TM
+./SFout $inPath $outPath $file3 -t-002-50 TM
+./SFout $inPath $outPath $file3 -t-002-80 TM
+./SFout $inPath $outPath $file3 -t-002-100 TM
+./SFout $inPath $outPath $file3 -t-002-150 TM
+./SFout $inPath $outPath $file3 -t-002-200 TM
+./SFout $inPath $outPath $file3 -t-002-250 TM
+./SFout $inPath $outPath $file3 -t-002-300 TM
