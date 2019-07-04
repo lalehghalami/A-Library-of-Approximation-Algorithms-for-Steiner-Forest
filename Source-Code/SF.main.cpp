@@ -94,10 +94,3 @@ int main(int argc, char* argv[])
     return 0;
 }
 
-// Creating path for input
-//     string strInput_0= "/data/wsuhome/ff/ff96/ff9687/Forest-Instances-Parameterized/instance";
-// Creating path for output
-//    string strO0="/wsu/home/ff/ff96/ff9687/Results-7Apr/Result-Alg-";
-//        string strO0="/Users/lghalami/Documents/Laleh/Steiner/code/Result-Alg-";
-//    string strO0="/Users/lalehghalami/Desktop/SF-test/Result-Alg-";
-
