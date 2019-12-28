@@ -11,9 +11,6 @@ void creatInputPath(string &strInputFile,string path,string nFile);
 void creatOutputPath(string &strOutputFile, string nFile,string alg);
 void readInputFileAdjList(string str, int &nVertex, int &nEdges, int &nTerminals, int *&terminals, vector<pair<int,int> > *&adj, vector<vector<int > > & sites);
 
-//MPI
-void readInputFileAdjListMPI(string str, int &nVertex, int &nEdges, int &nTerminals, int *&terminals, vector<pair<int,int> > *&adj, vector<vector<int > > & sites, double*& weights, int*& cor1, int*& cor2);
-
 //Greedy
 
 int dijkstra(int source, int sink,int nVertex, vector<pair<int,int> > *&adj, vector<vector< int > > &path);
