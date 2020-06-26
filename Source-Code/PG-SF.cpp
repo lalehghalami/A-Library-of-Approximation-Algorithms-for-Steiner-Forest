@@ -1,6 +1,7 @@
 #include "PG-SF.hpp"
 #include "SF-Solution.h"
 #include "SF-Functions.h"
+#include <cstdint>
 
 using namespace std;
 
@@ -20,7 +21,7 @@ void greedyAlgorithm(int &nVertex, int &nEdges, int &nTerminals, int *&terminals
     while (flag==0)
     {
         int holdIndex=-1;
-        int selectedSite=INT_MAX;
+        int selectedSite=100000000;
         vector<vector< int > > selectedEdges;
         for (int i=0; i<updatedPairedTerminals.size(); i++)
         {

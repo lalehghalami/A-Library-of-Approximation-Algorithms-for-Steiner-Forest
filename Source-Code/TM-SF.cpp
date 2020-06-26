@@ -1,10 +1,14 @@
+#include <iostream>
+#include <cstdint>
+#include <algorithm>
+
 #include "SF-Functions.h"
 #include "TM-SF.hpp"
 #include "TM-Functions.h"
 
 using namespace std;
 
-void treeMetricAlgorithm(int &nVertex, int &nEdges, int &nTerminals, int *&terminals, vector<pair<int,int>> *&adjList, vector<vector<int > > & pairedTerminals, int &solutionCost)
+void treeMetricAlgorithm(int &nVertex, int &nEdges, int &nTerminals, int *&terminals, vector<pair<int,int>> *&adjList, vector<vector<int > > & pairedTerminals, int &solutionCost, int &diameter)
 
 {
     cout<<"--------------------------------------------"<<endl;
@@ -27,14 +31,14 @@ void treeMetricAlgorithm(int &nVertex, int &nEdges, int &nTerminals, int *&termi
     findPath(adjList,pathMatrix,nVertex); // find the shortest path between all vertices
     // *************************************************************************//
     
-    int delta=INT_MIN;
+    int delta=-1000000; // check it
     for (int i=0; i<nVertex; i++) {
         for (int j=0; j<nVertex; j++) {
             if (delta< pathMatrix[i][j])
                 delta=pathMatrix[i][j];
         }
     }
-    
+    diameter=delta;
     delta=pow2roundup(delta*2);
     
     // *************************************************************************//

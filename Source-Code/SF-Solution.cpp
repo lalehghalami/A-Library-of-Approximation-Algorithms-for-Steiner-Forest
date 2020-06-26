@@ -83,6 +83,7 @@ void steinerForest::BFSCleanSolution(int s,int t, int &sum)
             }
         }
     }
+    vector<vector<int> > pathVec;
     
     int currentV=t;
     while (pred[currentV]!=-1) {
@@ -90,15 +91,21 @@ void steinerForest::BFSCleanSolution(int s,int t, int &sum)
         for (int i=0; i< adj[currentV].size(); i++)
         {
             if (adj[currentV][i].index==pred[currentV]) {
+                vector<int> tPath;
+                tPath.push_back(currentV);
+                tPath.push_back(adj[currentV][i].index);
+                pathVec.push_back(tPath);
                 adj[currentV][i].weight=0;
             }
         }
         for (int i=0; i< adj[pred[currentV]].size(); i++)
         {
             if (adj[pred[currentV]][i].index==currentV) {
+
                 adj[pred[currentV]][i].weight=0;
             }
         }
         currentV=pred[currentV];
     }
+
 }

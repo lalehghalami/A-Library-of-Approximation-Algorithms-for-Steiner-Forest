@@ -1,6 +1,13 @@
 #include "TM-Functions.h"
 #include "SF-Functions.h"
 
+#include <iostream>
+#include <set>
+#include <stack>
+#include <queue>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
 Tree::Tree()
@@ -59,7 +66,7 @@ void Tree::buildTreeMetric(int nVertex,vector<vector<int> > pathMatrix,vector<in
             if (intersecVector.size()!=0)
             {
                 for (int r=0; r<intersecVector.size(); r++)     // Remove B(π(j), ri−1) ∩ S from S
-                    S.erase(remove(S.begin(), S.end(), intersecVector[r]), S.end());
+                    S.erase(remove(S.begin(), S.end(), intersecVector[r] ), S.end());
     
                 insert(node,nodeCounts,intersecVector,node->level-1);
                 nodeCounts++;
