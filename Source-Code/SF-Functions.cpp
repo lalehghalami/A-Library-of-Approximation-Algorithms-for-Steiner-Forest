@@ -22,46 +22,96 @@ void creatInputPath(string &strInputFile,string path,string nFile)
 {
     string  strInput_0, strInput_1, strInput_2;
     
-    ostringstream convertIn_0;
-    convertIn_0 << path;
-    strInput_0 = convertIn_0.str();
-    strInputFile.append(strInput_0);
-    
-    ostringstream convertIn_1;
-    convertIn_1 << nFile;
-    strInput_1 = convertIn_1.str();
-    strInputFile.append(strInput_1);
-    
-    strInput_2=".gr";
-    strInputFile.append(strInput_2);
-    
+    strInputFile.append(path);
+    strInputFile.append(nFile);
 }
-void creatOutputPath(string &strOutputFile, string nFile, string alg)
+void creatOutputPath(string &strOutputFile, string nFile, string alg, string run)
 {
     string  strOutput_0, strOutput_1, strOutput_2, strOutput_3,strOutput_F;
     
     strOutput_0 ="Result-Alg-";
     strOutputFile.append(strOutput_0);
-
-    ostringstream convertOut_1;
-    convertOut_1 << alg;
-    strOutput_1 = convertOut_1.str();
-    strOutputFile.append(strOutput_1);
-    
+    strOutputFile.append(alg);
     strOutput_2="-Instance";
     strOutputFile.append(strOutput_2);
+    strOutputFile.append(nFile);
     
-    ostringstream convertOut_F;
-    convertOut_F << nFile;
-    strOutput_F = convertOut_F.str();
-    strOutputFile.append(strOutput_F);
-    
-    strOutput_3=".txt";
+    strOutput_3="-run";
     strOutputFile.append(strOutput_3);
-    
+    strOutputFile.append(run);
+    strOutput_F=".txt";
+    strOutputFile.append(strOutput_F);
+
+    cout<<"Run : "<< run<<endl;   
 }
 
-void readInputFileAdjList(string str, int &nVertex, int &nEdges, int &nTerminals, int *&terminals, vector<pair<int,int> > *&adj, vector<vector<int > > & sites)
+void readInputFileToAdjMatrix(string str, int &nVertex, int &nEdges, int &nTerminals, int *&terminals, vector<vector<int> > & adjMatrix, vector<vector<int > > & sites, vector<vector<int > > & E, double &prob, double &avEdges)
+{
+    sites.clear();
+    ifstream myfile;
+    myfile.open(str);
+    if(!myfile)
+    {
+        cout << "Error: file could not be opened"  << endl;
+        exit (EXIT_FAILURE);
+    }
+    
+    static const int max_line = 65536;
+    string s;
+    myfile.ignore(max_line, '\n');
+    myfile>>s; // Nodes;
+    myfile>>nVertex;
+    myfile>>s; // Edges;
+    myfile>>nEdges;
+    
+    vector<int> tempAdjVec (nVertex,0);
+    for (int i=0; i<nVertex; i++)
+        adjMatrix.push_back(tempAdjVec);
+    
+    int i1,i2,w;
+    myfile>>s;
+    while (s=="E") {
+        myfile >> i1 >> i2 >> w;
+        adjMatrix[i1-1][i2-1]=w;
+        adjMatrix[i2-1][i1-1]=w;
+        vector<int> edge;
+        edge.push_back(i1-1);
+        edge.push_back(i2-1);
+        E.push_back(edge);
+        myfile>>s;
+        if (s=="END") break;
+    }
+    
+    myfile.ignore(max_line, '\n');
+    myfile>>s; // SECTION;
+    myfile>>s; // Terminals;
+    myfile>>s; // Terminals;
+    myfile>>nTerminals; // nTerminals;
+    terminals=new int[nTerminals];
+    myfile>>s; // T;
+    
+    int counter=1;
+    int tIndex=0;
+    
+    int t1,t2;
+     while (s=="TP")
+    {
+	myfile >> t1 >> t2;
+	terminals[tIndex]=t1-1;
+	tIndex++;
+        terminals[tIndex]=t2-1;
+	tIndex++;
+	vector<int> terComponent;
+	terComponent.push_back(t1-1);
+	terComponent.push_back(t2-1);
+	sites.push_back(terComponent);
+        myfile>>s;
+        if (s=="END") break;
+    }
+
+}
+
+void readInputFileAdjList(string str, int &nVertex, int &nEdges, int &nTerminals, int *&terminals, vector<pair<int,int> > *&adj, vector<vector<int > > & sites, vector<vector<int > > & E,double &prob, double &avEdges)
 {
     ifstream myfile;
     myfile.open(str);
@@ -86,10 +136,16 @@ void readInputFileAdjList(string str, int &nVertex, int &nEdges, int &nTerminals
         myfile >> a1 >> a2 >> a3;
         adj[a1-1].push_back(make_pair(a2-1,a3));
         adj[a2-1].push_back(make_pair(a1-1,a3));
+        vector<int> edge;
+        edge.push_back(a1-1);
+        edge.push_back(a2-1);
+        E.push_back(edge);
+        
+        
         myfile>>s;
         if (s=="END") break;
     }
-
+    
     myfile.ignore(max_line, '\n');
     myfile>>s; // SECTION;
     myfile>>s; // Terminals;
@@ -97,28 +153,84 @@ void readInputFileAdjList(string str, int &nVertex, int &nEdges, int &nTerminals
     myfile>>nTerminals; // nTerminals;
     terminals=new int[nTerminals];
     myfile>>s; // T;
-    int i=0;
-    while (s=="T") {
-        myfile >> a1;
-        terminals[i]=a1-1;
-        i++;
+    
+    int counter=1;
+    int tIndex=0;
+    
+
+   int	t1,t2;
+     while (s=="TP")
+    {
+        myfile >> t1 >> t2;
+        terminals[tIndex]=t1-1;
+        tIndex++;
+       	terminals[tIndex]=t2-1;
+        tIndex++;
+        vector<int> terComponent;
+        terComponent.push_back(t1-1);
+        terComponent.push_back(t2-1);
+        sites.push_back(terComponent);
         myfile>>s;
         if (s=="END") break;
     }
     
-    for(int i=0; i<nTerminals/2; i++)
-    {
-        vector<int> temPair;
-        temPair.push_back(terminals[i]);
-        temPair.push_back(terminals[i+nTerminals/2]);
-        sites.push_back(temPair);
-    }
-   
 }
 
 
-// *************************************************************************//
-
+//// *************************************************************************//
+int dijkstraWithAdjMatrix(int source, int sink,int nVertex, vector<vector<int> > &adjMatrix, vector<vector< int > > &path)
+{
+    
+    vector<int> dist(nVertex, INT_MAX);
+    dist[source]=0;
+    
+    int* visited=new int[nVertex];
+    memset(visited, 0, nVertex*sizeof(int));
+    
+    int* prev=new int[nVertex];
+    prev[source]=source;
+    
+    priority_queue< iPair, vector <iPair> , greater<iPair> > pq;        // Create a priority queue to store vertices that are being preprocessed.
+    pq.push(make_pair(0,source));                                       // Insert source itself in priority queue and initialize its distance as 0.
+    
+    int u;
+    while (!pq.empty())
+    {
+        u=pq.top().second;
+        pq.pop();
+        vector< pair<int, int> >::iterator i;
+        
+        for (int j=0; j<nVertex; j++) {
+            if (adjMatrix[u][j]!=0) {
+                int v=j;
+                int weight=adjMatrix[u][j];
+                
+                if (dist[v]>dist[u]+weight)
+                {
+                    dist[v]=dist[u]+weight;
+                    pq.push(make_pair(dist[v],v));
+                    prev[v]=u;
+                }
+                
+            }
+        }
+        
+       
+        
+    }
+    
+    int flag=0;
+    int temp=sink;
+    while (flag==0) {
+        vector<int> tempVec;
+        tempVec.push_back(temp);
+        tempVec.push_back(prev[temp]);
+        path.push_back(tempVec);
+        if (prev[temp]==source) flag=1;
+        temp=prev[temp];
+    }
+    return dist[sink];
+}
 int dijkstra(int source, int sink,int nVertex, vector<pair<int,int> > *&adjList, vector<vector< int > > &path)
 {
     
@@ -130,7 +242,7 @@ int dijkstra(int source, int sink,int nVertex, vector<pair<int,int> > *&adjList,
     
     int* prev=new int[nVertex];
     prev[source]=source;
-
+    
     priority_queue< iPair, vector <iPair> , greater<iPair> > pq;        // Create a priority queue to store vertices that are being preprocessed.
     pq.push(make_pair(0,source));                                       // Insert source itself in priority queue and initialize its distance as 0.
     
@@ -143,16 +255,16 @@ int dijkstra(int source, int sink,int nVertex, vector<pair<int,int> > *&adjList,
         for (i = adjList[u].begin(); i != adjList[u].end(); ++i){       // Get vertex label and weight of current adjacent of u.
             int v = (*i).first;
             int weight = (*i).second;
-        
-                    if (dist[v]>dist[u]+weight)
-                    {
-                        dist[v]=dist[u]+weight;
-                        // ?? Before addding to PQ need to check if already added this node, if so needs to update it other than add a new duplicate (visited vector) !
-                        pq.push(make_pair(dist[v],v));
-                        prev[v]=u;
-                    }
+            
+            if (dist[v]>dist[u]+weight)
+            {
+                dist[v]=dist[u]+weight;
+                // ?? Before addding to PQ need to check if already added this node, if so needs to update it other than add a new duplicate (visited vector) !
+                pq.push(make_pair(dist[v],v));
+                prev[v]=u;
+            }
         }
-
+        
     }
     
     int flag=0;
@@ -247,9 +359,9 @@ vector<int> intersection(vector<int> &v1, vector<int> &v2)
 
 void floydWarshall (int &nVertex, vector<pair<int,int> > *&adjList,vector<vector<int > > & distResult,vector<vector<int > > & pathTracker)
 {
-  
+    
     int  i, j, k;
-
+    
     for (i = 0; i < nVertex; i++)
         for (j = 0; j < nVertex; j++)
         {
@@ -268,37 +380,22 @@ void floydWarshall (int &nVertex, vector<pair<int,int> > *&adjList,vector<vector
     }
     for (i = 0; i < nVertex; i++)
         distResult[i][i]=0;
-
+    
     for (k = 0; k < nVertex; k++)
     {
         for (i = 0; i < nVertex; i++)
         {
             for (j = 0; j < nVertex; j++)
             {
-
+                
                 if ((!(distResult[i][k]==INT_MAX))&&(!(distResult[k][j]==INT_MAX)))
-                if (long(distResult[i][k] + distResult[k][j] < distResult[i][j]))
-                {
-                    distResult[i][j] = distResult[i][k] + distResult[k][j];
-                    pathTracker[i][j] = pathTracker[k][j];
-                }
+                    if (long(distResult[i][k] + distResult[k][j] < distResult[i][j]))
+                    {
+                        distResult[i][j] = distResult[i][k] + distResult[k][j];
+                        pathTracker[i][j] = pathTracker[k][j];
+                    }
             }
         }
     }
-
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
